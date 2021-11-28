@@ -6,10 +6,12 @@ import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 
 import productsReducer from './featues/productsSlice';
+import { productsApi } from './features/productsApi';
 
 const store = configureStore({
   reducer: {
     products: productsReducer,
+    [productsApi.reducerPath] : productsApi.reducer,
   }
 })
 
